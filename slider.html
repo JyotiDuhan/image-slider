@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Slider</title>
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="slider-container">
+				<img src="images/left.svg" alt="left" class="hscroll left">
+				<div class="content">
+					<img src="" alt="img1" class="img">
+				</div>
+				<img src="images/left.svg" alt="left" class="hscroll right rotate">
+			</div>
+		</div>
+		<script src="conf.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				var confs;
+				if(!userConfs){
+					confs = {};
+				}else{
+					if(userConfs === Object(userConfs) && Object.keys(userConfs).length > 0){
+						confs = userConfs;
+					}
+				}
+				window.Slider(confs);
+			});
+		</script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
