@@ -92,6 +92,9 @@
 			}else if(i < len && i > 0){
 				i = i*1-1;
 				imgSrc.src = 'images/' + newConfs.images[i];
+			} else if(i === 0) {
+				i = len - 1;
+				imgSrc.src = 'images/' + newConfs.images[i];
 			}
 		}
 		//function to trigger the images on right side
@@ -100,9 +103,10 @@
 				i = i*1+1;
 				imgSrc.src = 'images/' + newConfs.images[i];
 			}else {
-				imgSrc.src = 'images/' + newConfs.images[len-1];
+				i = len - (i + 1);
+				imgSrc.src = 'images/' + newConfs.images[i];
 			}
-		}	
+		}
 	}
 	//	set the configuration to user defined(if passed) else to default
 	function _setConfs(confs){
